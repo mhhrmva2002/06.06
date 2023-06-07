@@ -7,16 +7,6 @@ const SlideSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
-  description: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  image: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   dateCreated: {
     type: Date,
     default: Date.now,

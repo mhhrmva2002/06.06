@@ -10,10 +10,18 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  category: {
+  categoryId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Category",
   },
+  image: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  }
 });
 
 const Product = mongoose.model("Card", ProductSchema);

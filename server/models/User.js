@@ -7,11 +7,6 @@ const UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  lastName: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   email: {
     type: String,
     required: true,
@@ -22,23 +17,12 @@ const UserSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  role: {
+  basketItems: {
     type: String,
     enum: ["user", "admin"],
     default: "user",
-  },
-  cart: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Card",
-    },
-  ],
-  likes: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Card",
-    },
-  ]
+  }
+  
 });
 UserSchema.pre("save", function (next) {
   if (!this.isModified("password")) return next();
